@@ -15,5 +15,5 @@ npm-debug.log
 yarn-error.log
 .php_cs
 .php_cs.cache
-/app/Support
 docker-compose/mysql
+report/
