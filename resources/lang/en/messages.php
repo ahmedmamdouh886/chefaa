@@ -15,5 +15,5 @@ return [
 
     'internal_server_error' => 'Something went wrong, please tray again later or contact us.',
     'booked_successfully' => 'The :entity has been booked successfully.',
-    'created_successfully' => 'Created successfully!'
+    'created_successfully' => 'Created successfully!',
 ];

@@ -6,11 +6,11 @@ use App\Support\Payments\V1\Contracts\PaymentContract;
 
 class PaymentManager
 {
-	/**
-	 * Price.
-	 *
-	 * @var string
-	 */
+    /**
+     * Price.
+     *
+     * @var string
+     */
     protected string $price;
 
     /**

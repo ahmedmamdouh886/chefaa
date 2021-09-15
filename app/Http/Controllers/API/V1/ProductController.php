@@ -13,7 +13,7 @@ class ProductController extends Controller
 {
     /**
      * Product repository instance.
-     * 
+     *
      * @var \App\Repositories\ProductRepository
      */
     protected ProductRepository $productRepoInstance;

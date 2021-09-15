@@ -4,7 +4,7 @@ namespace App\Support\Payments\V1;
 
 final class VodafoneCashPayment extends AbstractPayment
 {
-	/**
+    /**
      * Payment way.
      *
      * @var string
@@ -13,8 +13,8 @@ final class VodafoneCashPayment extends AbstractPayment
 
     /**
      * Pay.
-     * 
-     * @var string $price
+     *
+     * @var string
      */
     public function pay(string $price)
     {

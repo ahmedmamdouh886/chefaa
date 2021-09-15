@@ -8,14 +8,14 @@ class PharmacyRepository
 {
     /**
      * Pharmacy model instance.
-     * 
+     *
      * @var \App\Models\Pharmacy
      */
     protected Pharmacy $pharmacyModel;
 
     /**
      * Instantiate a class instance.
-     * 
+     *
      * @param \App\Models\Pharmacy
      */
     public function __construct(Pharmacy $pharmacyModel)
@@ -37,7 +37,7 @@ class PharmacyRepository
      * Find a pharmacy by id.
      *
      * @param int $id
-     * 
+     *
      * @return \App\Models\Pharmacy
      */
     public function findById(int $id)
@@ -50,7 +50,7 @@ class PharmacyRepository
      *
      * @param int $id
      * @param array $data
-     * 
+     *
      * @return void
      */
     public function update(int $id, array $data): void
@@ -62,7 +62,7 @@ class PharmacyRepository
      * Create a new pharamcy.
      *
      * @param array $data
-     * 
+     *
      * @return void
      */
     public function create(array $data): void
@@ -74,7 +74,7 @@ class PharmacyRepository
      * Delete a pharamcy.
      *
      * @param int $id
-     * 
+     *
      * @return void
      */
     public function delete(int $id): void

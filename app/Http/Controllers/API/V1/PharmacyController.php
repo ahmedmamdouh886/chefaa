@@ -13,7 +13,7 @@ class PharmacyController extends Controller
 {
     /**
      * Pharmacy repository instance.
-     * 
+     *
      * @var \App\Repositories\PharmacyRepository
      */
     protected PharmacyRepository $pharmacyRepoInstance;

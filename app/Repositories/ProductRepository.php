@@ -8,14 +8,14 @@ class ProductRepository
 {
     /**
      * Product model instance.
-     * 
+     *
      * @var \App\Models\Product
      */
     protected Product $productModel;
 
     /**
      * Instantiate a class instance.
-     * 
+     *
      * @param \App\Models\Product
      */
     public function __construct(Product $productModel)
@@ -37,7 +37,7 @@ class ProductRepository
      * Find a product by id.
      *
      * @param int $id
-     * 
+     *
      * @return \App\Models\Product
      */
     public function findById(int $id)
@@ -50,7 +50,7 @@ class ProductRepository
      *
      * @param int $id
      * @param array $data
-     * 
+     *
      * @return void
      */
     public function update(int $id, array $data): void
@@ -62,7 +62,7 @@ class ProductRepository
      * Create a new product.
      *
      * @param array $data
-     * 
+     *
      * @return void
      */
     public function create(array $data): void
@@ -74,7 +74,7 @@ class ProductRepository
      * Delete a product.
      *
      * @param int $id
-     * 
+     *
      * @return void
      */
     public function delete(int $id): void
