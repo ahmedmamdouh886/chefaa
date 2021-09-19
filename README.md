@@ -16,6 +16,7 @@ cp .env.example .env
 docker-compose up --build
 docker-compose exec app composer install
 docker-compose exec app php artisan migrate
+docker-compose exec php artisan test --testsuite=Feature
 docker-compose exec app php artisan db:seed
 ``` 
 
@@ -30,6 +31,7 @@ docker-compose exec app php artisan db:seed
 
 ### Product Endpoints
 * Visit: GET http://localhost:8000/api/v1/products -> To list all products.
+* Visit: GET http://localhost:8000/api/v1/products?title=pana -> To filter products by title to lost all "%Pana%".
 * Visit: post http://localhost:8000/api/v1/products -> To create a new products.
 * Visit: put http://localhost:8000/api/v1/products/{id} -> To update a products.
 * Visit: delete http://localhost:8000/api/v1/products/{id} -> To delete a products.
@@ -60,3 +62,5 @@ docker-compose exec app php artisan db:seed
 * ./database/factories --> Contains DB factories to help out loading up some data into DB.
 * ./database/seeders --> Contains Seeders files to seed some data into DB.
 * ./tests/Feature --> Contains HTTP requests tests to your application and examining the responses.
+* ./config/database --> For DB configuration, such as sqlite configuration to run the tests using in memory.
+* ./phpunit.xml --> Unit test configuration file.
