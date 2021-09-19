@@ -36,8 +36,13 @@ docker-compose exec app php artisan db:seed
 * Visit: put http://localhost:8000/api/v1/products/{id} -> To update a products.
 * Visit: delete http://localhost:8000/api/v1/products/{id} -> To delete a products.
 
+### Stateful endpoints
+* Visit: http://localhost:8000
+
 ### Artisan commands
-* Run: docker-compose exec app php artisan products:search-cheapest {productId} --> To Get cheapest pharmacies prices for the defined product id.
+```bash
+docker-compose exec app php artisan products:search-cheapest {productId}
+```
 
 ## Software metrics
 ### Maintability complexity metric
