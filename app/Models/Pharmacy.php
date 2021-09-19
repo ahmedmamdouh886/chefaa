@@ -11,6 +11,13 @@ class Pharmacy extends Model
     use HasFactory, SoftDeletes;
 
     /**
+     * Hidden relations.
+     * 
+     * @var array
+     */
+    protected $hidden = ['pivot'];
+
+    /**
      * The table associated with the model.
      *
      * @var string
@@ -26,19 +33,6 @@ class Pharmacy extends Model
         'name',
         'address',
     ];
-
-    /**
-     * Scope a query to only include users of a given phone.
-     *
-     * @param \Illuminate\Database\Eloquent\Builder
-     * @param mixed
-     *
-     * @return \Illuminate\Database\Eloquent\Builder
-     */
-    public function scopeFilter($query, array $search)
-    {
-        return PharmacyFilter::filter($query, $search);
-    }
 
     /**
      * Get products that belongs to this pharmacy.
