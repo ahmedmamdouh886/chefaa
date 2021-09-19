@@ -14,6 +14,13 @@ use Illuminate\Http\Response;
 class ProductController extends Controller
 {
     /**
+     * Per page.
+     * 
+     * @var int How many rows you want in each pagination page.
+     */
+    const PER_PAGE = 10;
+
+    /**
      * Product repository instance.
      *
      * @var \App\Repositories\ProductRepository $productRepoInstance Product repository.
@@ -48,7 +55,7 @@ class ProductController extends Controller
      */
     public function index(Request $request)
     {
-        return ProductResource::collection($this->productRepoInstance->paginate(10, ['id', 'title'], $request->only('title'))->appends($request->only('title')));
+        return ProductResource::collection($this->productRepoInstance->paginate(self::PER_PAGE, ['id', 'title'], $request->only('title'))->appends($request->only('title')));
     }
 
     /**

@@ -12,6 +12,13 @@ use Illuminate\Http\Response;
 class PharmacyController extends Controller
 {
     /**
+     * Per page.
+     * 
+     * @var int How many rows you want in each pagination page.
+     */
+    const PER_PAGE = 10;
+
+    /**
      * Pharmacy repository instance.
      *
      * @var \App\Repositories\PharmacyRepository Pharmacy repository.
@@ -36,7 +43,7 @@ class PharmacyController extends Controller
      */
     public function index()
     {
-        return PharmacyResource::collection($this->pharmacyRepoInstance->paginate(10, ['id', 'name', 'address']));
+        return PharmacyResource::collection($this->pharmacyRepoInstance->paginate(self::PER_PAGE, ['id', 'name', 'address']));
     }
 
     /**
