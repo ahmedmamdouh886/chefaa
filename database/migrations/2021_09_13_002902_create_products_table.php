@@ -17,8 +17,6 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->string('title', 60);
             $table->text('description', 60);
-            $table->unsignedDecimal('price', 6, 2);
-            $table->unsignedSmallInteger('quantity');
             $table->timestamps();
             $table->softDeletes();
         });

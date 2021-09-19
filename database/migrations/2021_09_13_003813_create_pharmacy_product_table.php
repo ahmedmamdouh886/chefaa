@@ -17,10 +17,11 @@ class CreatePharmacyProductTable extends Migration
             $table->id();
             $table->foreignId('pharmacy_id')->constrained('pharmacies');
             $table->foreignId('product_id')->constrained('products');
+            $table->unsignedDecimal('price', 6, 2);
+            $table->unsignedSmallInteger('quantity');
             $table->softDeletes();
 
-            $table->index('pharmacy_id');
-            $table->index('product_id');
+            $table->index(['pharmacy_id', 'product_id']);
         });
     }
 
