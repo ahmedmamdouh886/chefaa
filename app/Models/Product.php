@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Repositories\Filters\Product as ProductFilter;
+use Illuminate\Database\Eloquent\Concerns\HidesAttributes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -25,8 +27,6 @@ class Product extends Model
     protected $fillable = [
         'title',
         'description',
-        'price',
-        'quantity',
     ];
 
     /**
@@ -49,7 +49,7 @@ class Product extends Model
      */
     public function scopeFilter($query, array $search)
     {
-        return ProductFilter::filter($query, $search);
+        return ProductFilter::apply($query, $search);
     }
 
     /**
@@ -59,6 +59,6 @@ class Product extends Model
      */
     public function pharmacies()
     {
-        return $this->belongsToMany(Pharmacy::class);
+        return $this->belongsToMany(Pharmacy::class)->withPivot('price', 'quantity');
     }
 }
