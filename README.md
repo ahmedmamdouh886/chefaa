@@ -16,7 +16,7 @@ cp .env.example .env
 docker-compose up --build
 docker-compose exec app composer install
 docker-compose exec app php artisan migrate
-docker-compose exec php artisan test --testsuite=Feature
+docker-compose exec app php artisan test --testsuite=Feature
 docker-compose exec app php artisan db:seed
 ``` 
 
