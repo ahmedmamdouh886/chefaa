@@ -16,4 +16,6 @@ return [
     'internal_server_error' => 'Something went wrong, please tray again later or contact us.',
     'booked_successfully' => 'The :entity has been booked successfully.',
     'created_successfully' => 'Created successfully!',
+    'internal_server_error' => 'Somthing wrong has occurred, please contact the admin.',
+    'not_found' => 'Resource not found.',
 ];

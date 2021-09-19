@@ -36,6 +36,9 @@ docker-compose exec app php artisan db:seed
 * Visit: put http://localhost:8000/api/v1/products/{id} -> To update a products.
 * Visit: delete http://localhost:8000/api/v1/products/{id} -> To delete a products.
 
+### Artisan commands
+* Run: docker-compose exec app php artisan products:search-cheapest {productId} --> To Get cheapest pharmacies prices for the defined product id.
+
 ## Software metrics
 ### Maintability complexity metric
 ![Alt text](maintainability-complexity.png?raw=true "Maintability complexity metric")
@@ -64,3 +67,4 @@ docker-compose exec app php artisan db:seed
 * ./tests/Feature --> Contains HTTP requests tests to your application and examining the responses.
 * ./config/database --> For DB configuration, such as sqlite configuration to run the tests using in memory.
 * ./phpunit.xml --> Unit test configuration file.
+* ./app/Exceptions/Handler.php --> For Handling exceptions.

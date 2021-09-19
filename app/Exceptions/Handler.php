@@ -2,7 +2,9 @@
 
 namespace App\Exceptions;
 
+use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Http\Response;
 use Throwable;
 
 class Handler extends ExceptionHandler
@@ -37,5 +39,18 @@ class Handler extends ExceptionHandler
         $this->reportable(function (Throwable $e) {
             //
         });
+    }
+
+    public function render($request, Throwable $exception)
+    {
+        if ($request->ajax()) {
+            if ($exception instanceof \Illuminate\Database\Eloquent\ModelNotFoundException) {
+                return response()->json(['message' => __('messages.not_found')], Response::HTTP_NOT_FOUND);
+            } elseif ($exception instanceof Exception) {
+                return response()->json(['message' => __('messages.internal_server_error')], Response::HTTP_INTERNAL_SERVER_ERROR);
+            }
+        }
+
+        return parent::render($request, $exception);
     }
 }

@@ -6,6 +6,7 @@ use App\Models\Pharmacy;
 use App\Models\Product;
 use Faker\Factory as Faker;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class PharmacyProductStoreSeeder extends Seeder
 {
@@ -38,15 +39,16 @@ class PharmacyProductStoreSeeder extends Seeder
     public function run()
     {
         // TODO: Refactor it to reduce the time/space complexity.
+        DB::transaction(function () {
+            Pharmacy::insert(Pharmacy::factory()->count(self::PHARMACY_ROWS_COUNT)->make()->toArray());
+            Product::insert(Product::factory()->count(self::PRODUCT_ROWS_COUNT)->make()->toArray());
+            $products = Product::all(['id']);
 
-        Pharmacy::insert(Pharmacy::factory()->count(self::PHARMACY_ROWS_COUNT)->make()->toArray());
-        Product::insert(Product::factory()->count(self::PRODUCT_ROWS_COUNT)->make()->toArray());
-        $products = Product::all(['id']);
-
-        Pharmacy::get(['id'])->each(function ($pharmacy) use ($products) {
-            $pharmacy->products()->attach(
-                $this->formatPharmaciesProductsStore($products->random(self::RANDOM_ROWS_COUNT_SELECTION)->pluck('id')->toArray())
-            );
+            Pharmacy::get(['id'])->each(function ($pharmacy) use ($products) {
+                $pharmacy->products()->attach(
+                    $this->formatPharmaciesProductsStore($products->random(self::RANDOM_ROWS_COUNT_SELECTION)->pluck('id')->toArray())
+                );
+            });
         });
     }
 
