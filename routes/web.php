@@ -14,5 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
+
+Route::get('/products', 'ProductController@index')->name('products.index');
+Route::get('/products/{id}', 'ProductController@show')->name('products.show');
+Route::delete('/products/{id}', 'ProductController@destroy')->name('products.destroy');
+
+Route::get('/pharmacies', 'PharmacyController@index')->name('pharmacies.index');
+Route::delete('/pharmacies/{id}', 'PharmacyController@destroy')->name('pharmacies.destroy');

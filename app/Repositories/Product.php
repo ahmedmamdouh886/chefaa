@@ -47,15 +47,29 @@ class Product
     }
 
     /**
-     * Load relations.
+     * Load relations for collection.
      *
-     * @param array|string $relations some eager loading relations.
+     * @param array|string $relations some eager loading relations for collection of models.
      *
      * @return $this
      */
     public function with(...$relations)
     {
         $this->productModel = $this->productModel->with($relations);
+
+        return $this;
+    }
+
+    /**
+     * Load relations for single instance.
+     *
+     * @param array|string $relations some eager loading relations for single instance model.
+     *
+     * @return $this
+     */
+    public function load(...$relations)
+    {
+        $this->productModel = $this->productModel->load($relations);
 
         return $this;
     }

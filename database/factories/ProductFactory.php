@@ -21,12 +21,28 @@ class ProductFactory extends Factory
      */
     public function definition()
     {
-        // TODO: Should be in a provider layer.
-        $medicines = ['Panadol', 'Depaken', 'Cold & Flu', 'Mayo Clinic', 'Paracetamol', 'ibuprofen', 'Paracetamol'];
+        $productsTitles = [
+            'Panadol', 
+            'Large Panadol', 
+            'Panadol small', 
+            'Depaken BlaBla', 
+            'BlaBla Depaken', 
+            'BlaDepakenBla', 
+            'Cold & Flu', 
+            'Bla Bla Cold & Flu', 
+            'Cold & Flu Bla Bla', 
+            'Bla Cold & Flu Bla', 
+            'Mayo Clinic', 
+            'Panablablabla', 
+            'BlablaPanablabla', 
+            'Paracetamol', 
+            'ibuprofen', 
+            'Paracetamol'
+        ];
 
         return [
-            'title' => $medicines[array_rand($medicines)],
-            'description' => 'dsfjldsfjdsfsd',
+            'title' => $productsTitles[array_rand($productsTitles)],
+            'description' => $this->faker->text(50),
         ];
     }
 }
