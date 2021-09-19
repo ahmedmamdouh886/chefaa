@@ -26,8 +26,10 @@ class UpdateProductRequest extends FormRequest
         return [
             'title' => ['sometimes', 'required', 'string', 'max:100'],
             'description' => ['sometimes', 'required', 'string', 'max:500'],
-            'price' => ['sometimes', 'required', 'regex:/^\d+(\.\d{1,2})?$/'], // Regex allowed values: 12, 12.5 or 12.05
-            'quantity' => ['sometimes', 'required', 'integer'],
+            'pharmacies' => ['sometimes', 'required', 'array'],
+            'pharmacies.*.pharmacy_id' => ['required_with:pharmacies', 'integer', 'exists:pharmacies,id'],
+            'pharmacies.*.price' => ['required_with:pharmacies', 'regex:/^\d+(\.\d{1,2})?$/'], // Allowed values: 12, 12.5 or 12.05
+            'pharmacies.*.quantity' => ['required_with:pharmacies', 'integer', 'max:1000'],
         ];
     }
 }
