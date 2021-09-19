@@ -10,8 +10,8 @@ A trivial CRUD application for Chefaa - Software Engineer Task.
 
 ### Step 1
 ```bash
-git clone https://github.com/ahmedmamdouh886/fleet-management-system.git
-cd fleet-management-system
+git clone https://github.com/ahmedmamdouh886/chefaa.git
+cd chefaa
 cp .env.example .env
 docker-compose up --build
 docker-compose exec app composer install
@@ -20,11 +20,6 @@ docker-compose exec app php artisan db:seed
 ``` 
 
 ### Step 2
-## Credential
-
-* email: tech@robustastudio.com
-* password: password
-
 ## Endpoint
 
 ### Pharmacy Endpoints
