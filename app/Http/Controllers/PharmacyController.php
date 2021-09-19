@@ -52,7 +52,7 @@ class PharmacyController extends Controller
     public function destroy($id)
     {
         $this->pharmacyRepoInstance->delete($id);
-        
+
         return back();
     }
 }

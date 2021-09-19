@@ -22,22 +22,22 @@ class ProductFactory extends Factory
     public function definition()
     {
         $productsTitles = [
-            'Panadol', 
-            'Large Panadol', 
-            'Panadol small', 
-            'Depaken BlaBla', 
-            'BlaBla Depaken', 
-            'BlaDepakenBla', 
-            'Cold & Flu', 
-            'Bla Bla Cold & Flu', 
-            'Cold & Flu Bla Bla', 
-            'Bla Cold & Flu Bla', 
-            'Mayo Clinic', 
-            'Panablablabla', 
-            'BlablaPanablabla', 
-            'Paracetamol', 
-            'ibuprofen', 
-            'Paracetamol'
+            'Panadol',
+            'Large Panadol',
+            'Panadol small',
+            'Depaken BlaBla',
+            'BlaBla Depaken',
+            'BlaDepakenBla',
+            'Cold & Flu',
+            'Bla Bla Cold & Flu',
+            'Cold & Flu Bla Bla',
+            'Bla Cold & Flu Bla',
+            'Mayo Clinic',
+            'Panablablabla',
+            'BlablaPanablabla',
+            'Paracetamol',
+            'ibuprofen',
+            'Paracetamol',
         ];
 
         return [

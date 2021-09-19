@@ -64,7 +64,7 @@ class ProductController extends Controller
     public function destroy($id)
     {
         $this->productRepoInstance->delete($id);
-        
+
         return back();
     }
 }
