@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\API\V1\StorePharmacyRequest;
 use App\Http\Requests\API\V1\UpdatePharmacyRequest;
 use App\Http\Resources\API\V1\PharmacyResource;
-use App\Repositories\PharmacyRepository;
+use App\Repositories\Pharmacy as PharmacyRepository;
 use Illuminate\Http\Response;
 
 class PharmacyController extends Controller
@@ -14,14 +14,14 @@ class PharmacyController extends Controller
     /**
      * Pharmacy repository instance.
      *
-     * @var \App\Repositories\PharmacyRepository
+     * @var \App\Repositories\PharmacyRepository Pharmacy repository.
      */
     protected PharmacyRepository $pharmacyRepoInstance;
 
     /**
      * Display a listing of the resource.
      *
-     * @param \App\Repositories\PharmacyRepository
+     * @param \App\Repositories\PharmacyRepository Pharmacy repository.
      * @return \Illuminate\Http\Response
      */
     public function __construct(PharmacyRepository $pharmacyRepoInstance)
@@ -36,7 +36,7 @@ class PharmacyController extends Controller
      */
     public function index()
     {
-        return PharmacyResource::collection($this->pharmacyRepoInstance->paginate());
+        return PharmacyResource::collection($this->pharmacyRepoInstance->paginate(10, ['id', 'name', 'address']));
     }
 
     /**
@@ -55,7 +55,7 @@ class PharmacyController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id Pharmacy id.
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -66,8 +66,8 @@ class PharmacyController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request  $request
+     * @param int $id Pharmacy id.
      * @return \Illuminate\Http\Response
      */
     public function update(UpdatePharmacyRequest $request, $id)
@@ -80,7 +80,7 @@ class PharmacyController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id Pharmacy id.
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
