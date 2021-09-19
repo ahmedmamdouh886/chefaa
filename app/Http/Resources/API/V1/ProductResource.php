@@ -16,10 +16,9 @@ class ProductResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'title' => $this->name,
-            'description' => $this->description,
-            'quantity' => $this->description,
-            'price' => $this->description,
+            'title' => $this->title,
+            'description' => $this->when($this->description, fn () => $this->description),
+            'pharmacies' => PharmacyResource::collection($this->whenLoaded('pharmacies')),
         ];
     }
 }

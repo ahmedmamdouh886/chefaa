@@ -18,6 +18,8 @@ class PharmacyResource extends JsonResource
             'id' => $this->id,
             'name' => $this->name,
             'address' => $this->address,
+            'price' => $this->whenPivotLoaded('pharmacy_product', fn () => $this->pivot->price),
+            'quantity' => $this->whenPivotLoaded('pharmacy_product', fn () => $this->pivot->quantity),
         ];
     }
 }
