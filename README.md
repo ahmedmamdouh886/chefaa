@@ -40,9 +40,13 @@ docker-compose exec app php artisan db:seed
 * Visit: delete http://localhost:8000/api/v1/products/{id} -> To delete a products.
 
 ## Software metrics
+### Maintability complexity metric
 ![Alt text](maintainability-complexity.png?raw=true "Maintability complexity metric")
-![Alt text](maintainability-complexity.png?raw=true "Maintability without comments complexity metric")
+### Maintability without comments complexity metric
+![Alt text](maintainability-without-comments-complexity.png?raw=true "Maintability without comments complexity metric")
+### Cyclomatic complexity metric (which is conditional statements legs count)
 ![Alt text](cyclomatic-complexity.png?raw=true "Cyclomatic complexity metric which is conditional statements legs.")
+### Average bugs per class metrics
 ![Alt text](average-bugs.png?raw=true "Average bugs per class metric.")
 
 ## Files structure
