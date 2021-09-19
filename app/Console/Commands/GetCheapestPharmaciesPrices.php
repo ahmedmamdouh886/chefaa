@@ -2,7 +2,6 @@
 
 namespace App\Console\Commands;
 
-use App\Http\Resources\API\V1\PharmacyResource;
 use App\Repositories\PharmacyStore;
 use Illuminate\Console\Command;
 

@@ -4,29 +4,28 @@ namespace Database\Seeders;
 
 use App\Models\Pharmacy;
 use App\Models\Product;
-use Exception;
-use Illuminate\Database\Seeder;
 use Faker\Factory as Faker;
+use Illuminate\Database\Seeder;
 
 class PharmacyProductStoreSeeder extends Seeder
 {
     /**
      * Pharmacy rows count.
-     * 
+     *
      * @var int
      */
     const PHARMACY_ROWS_COUNT = 20000;
 
     /**
      * Rows count.
-     * 
+     *
      * @var int
      */
     const PRODUCT_ROWS_COUNT = 30000;
 
     /**
      * Random rows count selection.
-     * 
+     *
      * @var int
      */
     const RANDOM_ROWS_COUNT_SELECTION = 8;
@@ -39,7 +38,7 @@ class PharmacyProductStoreSeeder extends Seeder
     public function run()
     {
         // TODO: Refactor it to reduce the time/space complexity.
-       
+
         Pharmacy::insert(Pharmacy::factory()->count(self::PHARMACY_ROWS_COUNT)->make()->toArray());
         Product::insert(Product::factory()->count(self::PRODUCT_ROWS_COUNT)->make()->toArray());
         $products = Product::all(['id']);
@@ -53,7 +52,7 @@ class PharmacyProductStoreSeeder extends Seeder
 
     /**
      * generate price quantity for pivot Table.
-     * 
+     *
      * @param array $productsId Products ids.
      */
     private function formatPharmaciesProductsStore(array $productsIds): array
@@ -65,7 +64,7 @@ class PharmacyProductStoreSeeder extends Seeder
         foreach ($productsIds as $productId) {
             $pharmaciesProductStore[$productId] = [
                 'price' => $faker->randomDigitNotZero(),
-                'quantity' => $faker->randomDigitNotZero()
+                'quantity' => $faker->randomDigitNotZero(),
             ];
         }
 
@@ -73,7 +72,7 @@ class PharmacyProductStoreSeeder extends Seeder
     }
 
     /**
-     * Intialize faker
+     * Intialize faker.
      */
     private function IntializeFakerInstance()
     {

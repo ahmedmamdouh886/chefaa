@@ -9,7 +9,7 @@ class PharmacyStore
     /**
      * Pharmacy model instance.
      *
-     * @var \App\Repositories\PharmacyStore $pharmacyStoreRepository
+     * @var \App\Repositories\PharmacyStore
      */
     protected PharmacyStoreRepository $pharmacyStoreRepository;
 
@@ -34,13 +34,13 @@ class PharmacyStore
     public function handle(int $productId, array $pharmaciesProductDetails): void
     {
         $formattedPharmaciesProductDetails = [];
-        collect($pharmaciesProductDetails)->each(function($singlePharmacyProductDetails) use (&$formattedPharmaciesProductDetails) {
+        collect($pharmaciesProductDetails)->each(function ($singlePharmacyProductDetails) use (&$formattedPharmaciesProductDetails) {
             $formattedPharmaciesProductDetails[$singlePharmacyProductDetails['pharmacy_id']] = [
                 'price' => $singlePharmacyProductDetails['price'],
-                'quantity' => $singlePharmacyProductDetails['quantity']
+                'quantity' => $singlePharmacyProductDetails['quantity'],
             ];
         });
-        
+
         $this->pharmacyStoreRepository->addOrUpdateProductToMultiplePharmacies($productId, $formattedPharmaciesProductDetails);
     }
 }

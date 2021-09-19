@@ -15,7 +15,7 @@ class ProductController extends Controller
 {
     /**
      * Per page.
-     * 
+     *
      * @var int How many rows you want in each pagination page.
      */
     const PER_PAGE = 10;
@@ -23,14 +23,14 @@ class ProductController extends Controller
     /**
      * Product repository instance.
      *
-     * @var \App\Repositories\ProductRepository $productRepoInstance Product repository.
+     * @var \App\Repositories\ProductRepository Product repository.
      */
     protected ProductRepository $productRepoInstance;
 
     /**
      * Pharmacy store service.
      *
-     * @var \App\Services\PharmacyStore $pharmacyStoreService Pharmacy store service.
+     * @var \App\Services\PharmacyStore Pharmacy store service.
      */
     protected PharmacyStore $pharmacyStoreService;
 

@@ -3,21 +3,20 @@
 namespace App\Repositories;
 
 use App\Models\Product as ProductModel;
-use Illuminate\Support\Facades\DB;
 
 class Product
 {
     /**
      * Product model instance.
      *
-     * @var $productModel
+     * @var
      */
     protected $productModel;
 
     /**
      * Product model instance.
      *
-     * @var \App\Repositories\PharmacyRepository $pharmacyRepository
+     * @var \App\Repositories\PharmacyRepository
      */
     protected Pharmacy $pharmacyRepository;
 
@@ -39,7 +38,7 @@ class Product
      * @param int $perPage How many rows you want per page.
      * @param array $columns What columns you wanna fetch.
      * @param array $filters data to filter the products by title or wahtever.
-     * 
+     *
      * @return \Illuminate\Http\Response
      */
     public function paginate(int $perPage = 10, array $columns = ['*'], array $filters = [])
@@ -48,7 +47,7 @@ class Product
     }
 
     /**
-     * Load relations
+     * Load relations.
      *
      * @param array|string $relations some eager loading relations.
      *

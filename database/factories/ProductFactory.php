@@ -26,7 +26,7 @@ class ProductFactory extends Factory
 
         return [
             'title' => $medicines[array_rand($medicines)],
-            'description' => $this->faker->text(100)
+            'description' => 'dsfjldsfjdsfsd',
         ];
     }
 }

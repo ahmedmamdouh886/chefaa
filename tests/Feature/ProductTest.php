@@ -40,7 +40,7 @@ class ProductTest extends TestCase
                 'per_page',
                 'to',
                 'total',
-            ]
+            ],
         ]);
     }
 
@@ -77,7 +77,7 @@ class ProductTest extends TestCase
         $this->post('/api/v1/products', $payload)
         ->assertCreated()
         ->assertJson([
-                'message' => __('messages.created_successfully')
+                'message' => __('messages.created_successfully'),
             ]);
 
         $this->assertDatabaseHas('products', $payload);
@@ -113,7 +113,7 @@ class ProductTest extends TestCase
         $this->delete("/api/v1/products/{$product->id}")
         ->assertNoContent();
 
-        $this->assertSoftDeleted('products', $product->toArray());
+        $this->assertDatabaseMissing('products', $product->toArray());
     }
 
     /**

@@ -13,7 +13,7 @@ class PharmacyController extends Controller
 {
     /**
      * Per page.
-     * 
+     *
      * @var int How many rows you want in each pagination page.
      */
     const PER_PAGE = 10;

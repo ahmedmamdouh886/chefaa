@@ -22,8 +22,8 @@ class PharmacyFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->company . ' pharmacy',
-            'address' => $this->faker->address
+            'name' => $this->faker->company.' pharmacy',
+            'address' => $this->faker->address,
         ];
     }
 }

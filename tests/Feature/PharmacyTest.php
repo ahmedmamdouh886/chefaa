@@ -40,7 +40,7 @@ class PharmacyTest extends TestCase
                 'per_page',
                 'to',
                 'total',
-            ]
+            ],
         ]);
     }
 
@@ -62,7 +62,7 @@ class PharmacyTest extends TestCase
             'data' => [
                 'id' => $pharmacy->id,
                 'name' => $pharmacy->name,
-                'address' => $pharmacy->address
+                'address' => $pharmacy->address,
             ],
         ]);
     }
@@ -79,7 +79,7 @@ class PharmacyTest extends TestCase
         $this->post('/api/v1/pharmacies', $payload)
         ->assertCreated()
         ->assertJson([
-                'message' => __('messages.created_successfully')
+                'message' => __('messages.created_successfully'),
             ]);
 
         $this->assertDatabaseHas('pharmacies', $payload);
@@ -115,7 +115,7 @@ class PharmacyTest extends TestCase
         $this->delete("/api/v1/pharmacies/{$pharmacy->id}")
         ->assertNoContent();
 
-        $this->assertSoftDeleted('pharmacies', $pharmacy->toArray());
+        $this->assertDatabaseMissing('pharmacies', $pharmacy->toArray());
     }
 
     /**

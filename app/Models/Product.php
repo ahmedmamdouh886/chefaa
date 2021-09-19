@@ -3,7 +3,6 @@
 namespace App\Models;
 
 use App\Repositories\Filters\Product as ProductFilter;
-use Illuminate\Database\Eloquent\Concerns\HidesAttributes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;

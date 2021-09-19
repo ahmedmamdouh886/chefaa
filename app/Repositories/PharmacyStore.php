@@ -2,14 +2,12 @@
 
 namespace App\Repositories;
 
-use App\Repositories\Product;
-
 class PharmacyStore
 {
     /**
      * Pharmacy store model instance.
      *
-     * @var \App\Repositories\Product $productRepository
+     * @var \App\Repositories\Product
      */
     protected Product $productRepository;
 

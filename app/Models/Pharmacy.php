@@ -12,7 +12,7 @@ class Pharmacy extends Model
 
     /**
      * Hidden relations.
-     * 
+     *
      * @var array
      */
     protected $hidden = ['pivot'];

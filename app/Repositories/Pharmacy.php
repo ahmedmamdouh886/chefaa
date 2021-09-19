@@ -3,7 +3,6 @@
 namespace App\Repositories;
 
 use App\Models\Pharmacy as PharmacyModel;
-use App\Models\Product;
 
 class Pharmacy
 {
@@ -26,7 +25,7 @@ class Pharmacy
 
     /**
      * Paginate all pharmacies.
-     * 
+     *
      * @param int $perPage How many rows you want per page.
      * @param array $columns What columns you wanna fetch.
      *
